@@ -27,19 +27,6 @@ Four interactive data-analysis applications:
 
 **Python | Pandas | NumPy | Matplotlib | Seaborn | Streamlit | Jupyter Notebook**
 
-## 🚀 Setup
-
-```bash
-git clone https://github.com/ShreyashPatil-05/ADS-EL-ASSIGNMENTS.git
-cd ADS-EL-ASSIGNMENTS
-pip install -r requirements.txt
-```
-
-Run a Streamlit application:
-
-```bash
-streamlit run "foldername/streamlit_app.py"
-```
 
 ## 👨‍💻 Author
 

@@ -15,7 +15,7 @@ A consolidated multi-page **Streamlit** app covering 4 case study objectives for
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 ## Deploy on Streamlit Cloud

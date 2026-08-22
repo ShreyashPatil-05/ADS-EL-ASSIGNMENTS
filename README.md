@@ -38,7 +38,7 @@ pip install -r requirements.txt
 Run a Streamlit application:
 
 ```bash
-streamlit run "Assignment 2/app1.py"
+streamlit run "foldername/streamlit_app.py"
 ```
 
 ## 👨‍💻 Author

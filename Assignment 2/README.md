@@ -18,12 +18,7 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-## Deploy on Streamlit Cloud
-
-1. Push this repo to GitHub.
-2. Go to [share.streamlit.io](https://share.streamlit.io) → **New app**.
-3. Select your repo, branch `main`, and set **Main file path** to `app.py`.
-4. Click **Deploy**.
+## Streamlit Link:
 
 ---
 *Advanced Data Science Lab — Assignment 02*

@@ -19,6 +19,8 @@ streamlit run streamlit_app.py
 ```
 
 ## Streamlit Link:
-
+```bash
+https://assignment-02-ads.streamlit.app
+```
 ---
 *Advanced Data Science Lab — Assignment 02*

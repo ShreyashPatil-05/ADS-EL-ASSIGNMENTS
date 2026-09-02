@@ -21,7 +21,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Custom CSS for center alignment of all tables and clean UI styling
+# Custom CSS for center alignment of all tables and clean UI styling (dark/light theme compatible)
 st.markdown(
     """
     <style>
@@ -33,7 +33,6 @@ st.markdown(
     }
     th {
         text-align: center !important;
-        background-color: #f8f9fa !important;
         font-weight: 600 !important;
     }
     td {
@@ -50,12 +49,16 @@ st.markdown(
         text-align: center !important;
         justify-content: center !important;
     }
-    /* Metric styling */
+    /* Metric card styling - responsive and theme compatible */
     div[data-testid="metric-container"] {
         text-align: center !important;
-        padding: 10px;
-        background: #f8f9fb;
+        padding: 12px;
+        background: rgba(128, 128, 128, 0.08);
+        border: 1px solid rgba(128, 128, 128, 0.18);
         border-radius: 8px;
+    }
+    div[data-testid="stMetricValue"] {
+        white-space: nowrap !important;
     }
     </style>
     """,
@@ -208,26 +211,47 @@ def display_eda(df: pd.DataFrame) -> None:
 
     # 1. Summary Tab
     with tab_summary:
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4 = st.columns([1, 1, 1.4, 1])
         col1.metric("Total Records", f"{len(df):,}")
-        col2.metric("Unique Cities", df["City"].nunique())
-        col3.metric("Date Range", f"{df['Date'].min().strftime('%Y-%m-%d')} to {df['Date'].max().strftime('%Y-%m-%d')}")
-        col4.metric("Missing Values", df.isnull().sum().sum())
+        col2.metric("Unique Cities", f"{df['City'].nunique()}")
+        start_date = df["Date"].min().strftime("%Y-%m-%d")
+        end_date = df["Date"].max().strftime("%Y-%m-%d")
+        col3.metric(
+            "Date Range",
+            f"{df['Date'].min().year} – {df['Date'].max().year}",
+            f"{start_date} to {end_date}",
+            delta_color="off",
+        )
+        col4.metric("Missing Values", f"{df.isnull().sum().sum():,}")
+
+        # Core dataset columns for clean presentation (excluding internal cyclical features)
+        primary_cols = ["City", "Date"] + [p for p in POLLUTANT_COLUMNS if p in df.columns] + (["AQI"] if "AQI" in df.columns else []) + [TARGET_COLUMN]
+        primary_df = df[primary_cols].copy().rename(columns=DISPLAY_POLLUTANT_NAMES)
 
         st.markdown("#### 📄 Dataset Preview")
-        display_df = df.copy().rename(columns=DISPLAY_POLLUTANT_NAMES)
-        preview_table = display_df.head(10).astype(str)
+        preview_table = primary_df.head(10).astype(str)
         st.dataframe(center_dataframe(preview_table), use_container_width=True)
 
-        col_left, col_right = st.columns(2)
+        col_left, col_right = st.columns([1, 1.8])
         with col_left:
             st.markdown("#### 🔍 Missing Values Audit")
-            missing_df = df.isna().sum().rename("Missing Values").to_frame()
+            missing_df = primary_df.isna().sum().rename("Missing Count").to_frame()
+            missing_df.index.name = "Attribute"
             st.dataframe(center_dataframe(missing_df), use_container_width=True)
 
         with col_right:
             st.markdown("#### 📐 Summary Statistics")
-            desc_df = display_df.describe().T.round(2)
+            numeric_cols = [DISPLAY_POLLUTANT_NAMES.get(p, p) for p in POLLUTANT_COLUMNS if p in df.columns] + (["AQI"] if "AQI" in df.columns else [])
+            desc_df = primary_df[numeric_cols].describe().T
+            desc_df["count"] = desc_df["count"].astype(int).map(lambda x: f"{x:,}")
+            for c in ["mean", "std", "min", "25%", "50%", "75%", "max"]:
+                if c in desc_df.columns:
+                    desc_df[c] = desc_df[c].map(lambda x: f"{x:.2f}")
+            desc_df = desc_df.rename(columns={
+                "count": "Count", "mean": "Mean", "std": "Std Dev",
+                "min": "Min", "25%": "Q1 (25%)", "50%": "Median", "75%": "Q3 (75%)", "max": "Max"
+            })
+            desc_df.index.name = "Pollutant / Metric"
             st.dataframe(center_dataframe(desc_df), use_container_width=True)
 
     # 2. Category Distribution (Bar & Pie)

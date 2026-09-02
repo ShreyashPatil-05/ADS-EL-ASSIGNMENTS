@@ -25,6 +25,9 @@ Four interactive data-analysis applications:
 
 ### Project — Air Quality Index (AQI) Analysis & ML Classifier
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fa1-activity-project-aqi-analysis.streamlit.app/)
+> 🚀 **Live Demo**: [fa1-activity-project-aqi-analysis.streamlit.app](https://fa1-activity-project-aqi-analysis.streamlit.app/)
+
 An end-to-end Air Quality data science pipeline and interactive real-time prediction application:
 
 * 🧹 Data cleaning, column standardization & missing value imputation

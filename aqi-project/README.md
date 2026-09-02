@@ -1,5 +1,9 @@
 # 🌬️ Air Quality Index (AQI) Analysis & ML Prediction
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fa1-activity-project-aqi-analysis.streamlit.app/)
+
+> 🚀 **Live Demo**: [fa1-activity-project-aqi-analysis.streamlit.app](https://fa1-activity-project-aqi-analysis.streamlit.app/)
+
 An end-to-end Air Quality Index (AQI) data analysis, exploratory data visualization, and machine learning classification project built using Python, Scikit-Learn, and Streamlit.
 
 ---
@@ -74,7 +78,10 @@ jupyter notebook 125M1H002_FA1_Activity.ipynb
 
 ### 3. Launch the Streamlit Web Application
 
-Start the interactive dashboard locally:
+Access the deployed application directly:
+👉 **[Open Live Streamlit App](https://fa1-activity-project-aqi-analysis.streamlit.app/)**
+
+Or launch locally:
 
 ```bash
 streamlit run app.py

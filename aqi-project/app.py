@@ -464,16 +464,21 @@ with st.expander("📖 End-to-End ML Pipeline Architecture & Deployment", expand
         """
     )
 
-# Automatic Data Loading (No Sidebar)
-data_file = next(
-    (path for path in [
-        Path("data/aqi_data.csv"),
-        Path("aqi_data.csv"),
-        Path("data/india_city_aqi_2015_2023.csv"),
-        Path("india_city_aqi_2015_2023.csv"),
-    ] if path.exists()),
-    None,
-)
+# Automatic Data Loading (Resolves accurately in local, repo root, or Streamlit Cloud)
+BASE_DIR = Path(__file__).resolve().parent
+
+candidate_paths = [
+    BASE_DIR / "data" / "aqi_data.csv",
+    BASE_DIR / "aqi_data.csv",
+    BASE_DIR / "data" / "india_city_aqi_2015_2023.csv",
+    BASE_DIR / "india_city_aqi_2015_2023.csv",
+    Path("aqi-project/data/aqi_data.csv"),
+    Path("aqi project/data/aqi_data.csv"),
+    Path("data/aqi_data.csv"),
+    Path("aqi_data.csv"),
+]
+
+data_file = next((p for p in candidate_paths if p.exists()), None)
 
 if data_file is None:
     st.error("AQI dataset ('data/aqi_data.csv') not found in workspace.")

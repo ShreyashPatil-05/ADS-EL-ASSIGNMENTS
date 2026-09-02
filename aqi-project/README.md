@@ -43,13 +43,13 @@ An end-to-end Air Quality Index (AQI) data analysis, exploratory data visualizat
 
 ```text
 aqi-project/
-├── app.py                   # Streamlit interactive web application
-├── aqi_analysis.ipynb       # Jupyter notebook with complete EDA & ML pipeline
+├── app.py                         # Streamlit interactive web application
+├── 125M1H002_FA1_Activity.ipynb   # Jupyter notebook with complete EDA & ML pipeline
 ├── data/
-│   └── aqi_data.csv         # Air Quality historical dataset
-├── models/                  # Serialized ML pipeline artifacts (.pkl)
-├── .gitignore               # Ignored cache, checkpoints, and environment files
-└── README.md                # Project documentation
+│   └── aqi_data.csv               # Air Quality historical dataset
+├── models/                        # Serialized ML pipeline artifacts (.pkl)
+├── .gitignore                     # Ignored cache, checkpoints, and environment files
+└── README.md                      # Project documentation
 ```
 
 ---
@@ -69,7 +69,7 @@ pip install -r requirements.txt
 Open and execute the analysis notebook:
 
 ```bash
-jupyter notebook aqi_analysis.ipynb
+jupyter notebook 125M1H002_FA1_Activity.ipynb
 ```
 
 ### 3. Launch the Streamlit Web Application

@@ -23,10 +23,50 @@ Four interactive data-analysis applications:
 * 🎬 Movie Ratings Explorer
 * 🚢 Titanic Analysis
 
+### Project — Air Quality Index (AQI) Analysis & ML Classifier
+
+An end-to-end Air Quality data science pipeline and interactive real-time prediction application:
+
+* 🧹 Data cleaning, column standardization & missing value imputation
+* 📐 Parametric & non-parametric central tendency measures, skewness, kurtosis & Chi-Square test
+* 📊 Comprehensive EDA: AQI category distribution (Bar & Pie), average pollutant levels, KDE distributions & correlation heatmap
+* ⚙️ Cyclical temporal feature engineering (sine/cosine transforms) & preprocessing pipelines
+* 🤖 Chronological train-test benchmark: Logistic Regression, Decision Tree & Random Forest
+* 🔮 Streamlit dashboard for real-time AQI category prediction and probability confidence distribution
+
+---
+
 ## 🛠️ Tech Stack
 
-**Python | Pandas | NumPy | Matplotlib | Seaborn | Streamlit | Jupyter Notebook**
+**Python | Pandas | NumPy | Matplotlib | Seaborn | Scikit-Learn | SciPy | Streamlit | Jupyter Notebook**
 
+---
+
+## 🚀 Quick Start
+
+Clone the repository and install all dependencies:
+
+```bash
+git clone https://github.com/ShreyashPatil-05/ADS-EL-ASSIGNMENTS.git
+cd ADS-EL-ASSIGNMENTS
+pip install -r requirements.txt
+```
+
+### Running the Applications
+
+- **AQI Analysis & Prediction App**:
+  ```bash
+  cd aqi-project
+  streamlit run app.py
+  ```
+
+- **Assignment 02 Streamlit Hub**:
+  ```bash
+  cd "Assignment 2"
+  streamlit run streamlit_app.py
+  ```
+
+---
 
 ## 👨‍💻 Author
 

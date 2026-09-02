@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large data files (keep data/ folder but ignore heavy CSVs if needed)
+# Uncomment the line below if aqi_data.csv is too large for GitHub (>100 MB)
+# data/*.csv
+
+# Model artifacts (pickle files can be large — keep them tracked for now)
+# models/*.pkl

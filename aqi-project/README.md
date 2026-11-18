@@ -2,7 +2,7 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fa1-activity-project-aqi-analysis.streamlit.app/)
 
-> 🚀 **Live Demo**: [fa1-activity-project-aqi-analysis.streamlit.app](https://fa1-activity-project-aqi-analysis.streamlit.app/)
+> 🚀 **Live Demo**: [fa1-activity-project-aqi-analysis.streamlit.app](https://fa2-activity-project-aqi-analysis.streamlit.app/)
 
 An end-to-end Air Quality Index (AQI) data analysis, exploratory data visualization, and machine learning classification project built using Python, Scikit-Learn, and Streamlit.
 

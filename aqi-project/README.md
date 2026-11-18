@@ -1,6 +1,6 @@
 # 🌬️ Air Quality Index (AQI) Analysis & ML Prediction
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fa1-activity-project-aqi-analysis.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fa2-activity-project-aqi-analysis.streamlit.app/)
 
 > 🚀 **Live Demo**: [fa1-activity-project-aqi-analysis.streamlit.app](https://fa2-activity-project-aqi-analysis.streamlit.app/)
 
